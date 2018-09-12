@@ -1,0 +1,88 @@
+// mixin to add margin-top to an item if another child precedes it
+// must be used on a single selector, will not work on nested selectors
+mt($margin-top = $sp)
+    * + &
+        margin-top $margin-top
+
+// mixin to add margin-left to an item if another child precedes it
+// must be used on a single selector, will not work on nested selectors
+ml($margin-left = $sp)
+    * + &
+        margin-left $margin-left
+
+// mixin for centered container element
+contain($display = flex)
+    display $display
+    width 92%
+    max-width $container
+    margin-right auto
+    margin-left auto
+
+// mixin for resetting button elements
+button-reset()
+    cursor pointer
+    border none
+    background-color transparent
+    padding 0
+    font inherit
+    color inherit
+    
+// button default
+button-default()
+    color $cli--off
+    padding 8px 13px
+    transition: $trans-duration-fast
+    position: relative
+    border:3px solid rgba(255,255,255,1);
+    font-size 0.8rem
+    &:hover
+        width 160px
+        background-color $cl--first--low
+        border:3px solid rgba(255,255,255,0.5);
+
+// mixin to add a material design-style box shadow which expands on hover
+bxsh-hover($color = alpha($cl--dark, 10%))
+    box-shadow 0 1px 1px $color
+    &:active
+    &:focus
+    &:hover
+        box-shadow 0 3px 6px $color
+
+// mixin for non-interactive material-style box shadow
+bxsh-simple($percentage = 40%)
+    box-shadow 0 1px .06rem alpha($cl--dark, $percentage)
+
+// mixin to avoid z-index issues by default
+// when giving an element position: relative
+pos-r()
+    position relative
+    z-index auto
+    
+// outer glow
+outer-glow(n)
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,n);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,n);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,n);
+
+// inside shadow
+inside-shadow()
+    background: rgb(239,239,239);
+    background: -moz-linear-gradient(top, rgba(239,239,239,1) 0%, rgba(255,255,255,1) 26%);
+    background: -webkit-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(255,255,255,1) 26%);
+    background: linear-gradient(to bottom, rgba(239,239,239,1) 0%,rgba(255,255,255,1) 26%);
+
+// button animation
+button-animate()
+    background-color $cl--first--low 
+
+// border-radius
+border-radius(a, b, c, d)
+    border-radius a b c d
+    -webkit-border-radius a b c d
+    -moz-border-radius a b c d
+    border-radius a b c d
+ 
+
+
+
+

@@ -1,0 +1,9 @@
+/*
+    this mixin is intended to be used on the :root element.
+    we use it to set a base font-size which is based on the viewport
+    width, and which scales between two font-sizes we've set, at two
+    viewport widths that we've also set. We then use CSS variables to
+    set REM unit values for individual type elements, based on 3
+    different typographic scales. We set these as extends, for easier
+    overriding of an element's font-size in the rest of the codebase.
+*/

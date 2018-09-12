@@ -1,0 +1,271 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: $cl--off;
+}
+html[data-focus-source="key"] :focus {
+  z-index: 90;
+  outline-offset: 6px;
+  outline: 2px solid $cl--focus;
+}
+html :focus {
+  outline: 0;
+}
+.main_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.page_content {
+  flex: 1;
+  width: 100%;
+  font-family: "montserrat-medium-webfont";
+}
+.page_content__inner {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.page_content__inner > *:first-child {
+  margin-top: $sp--plus-half;
+}
+.page_content__inner > *:last-child {
+  margin-bottom: $sp--plus-half;
+}
+.page_content__inner .card {
+  background-color: $cl--white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 262px;
+  flex-direction: row;
+}
+.page_content__inner .card .image {
+  flex: 1;
+  position: relative;
+  flex-wrap: wrap;
+}
+.page_content__inner .card .image .photos {
+  display: block;
+  width: 45px;
+  height: 45px;
+  background-color: $cl--white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  transition: $trans-duration-med;
+}
+.page_content__inner .card .image .photos img {
+  width: 22px;
+  margin: 10px auto;
+  position: relative;
+  right: 2px;
+}
+.page_content__inner .card .image .image_inner {
+  opacity: 0;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: $trans-duration-med;
+}
+.page_content__inner .card .image .badger_image1 {
+  opacity: 1;
+  background-image: url("../images/badger_image1.jpg");
+}
+.page_content__inner .card .image .badger_image2 {
+  background-image: url("../images/badger_image2.jpg");
+}
+.page_content__inner .card .image .badger_image3 {
+  background-image: url("../images/badger_image3.jpg");
+}
+.page_content__inner .card .image:hover {
+  cursor: pointer;
+}
+.page_content__inner .card .image:hover .btn_arrow img {
+  opacity: 1;
+}
+.page_content__inner .card .image:hover .photos {
+  opacity: 0;
+}
+.page_content__inner .card .image .btn_arrow {
+  height: 45px;
+  width: 45px;
+  display: block;
+  top: 110px;
+  position: absolute;
+  z-index: 1;
+}
+.page_content__inner .card .image .btn_arrow img {
+  width: 15px;
+  opacity: 0;
+  margin: 5px auto;
+  transition: $trans-duration-fast;
+}
+.page_content__inner .card .image .btn_arrow__right {
+  right: 0;
+}
+.page_content__inner .card .image .fade_out {
+  opacity: 0;
+  transition: $trans-duration-fast;
+}
+.page_content__inner .card .image .fade_in {
+  opacity: 1;
+  transition: $trans-duration-fast;
+}
+.page_content__inner .card .right_side {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+}
+.page_content__inner .card .right_side .superhost {
+  position: absolute;
+  width: 100px;
+  right: -7px;
+  top: -7px;
+}
+.page_content__inner .card .inside {
+  align-items: flex-start;
+  background-color: $cli--on;
+}
+.page_content__inner .card .inside .btn__room {
+  width: 150px;
+}
+.page_content__inner .card .desc {
+  flex: 3;
+  padding: 15px 10px 15px 35px;
+  height: 212px;
+}
+.page_content__inner .card .desc .teaser {
+  font-size: 0.9rem;
+}
+.page_content__inner .card .desc .location {
+  color: $cl--second;
+}
+.page_content__inner .card .desc .location img {
+  width: 18px;
+  display: inline-flex;
+  position: relative;
+  bottom: 1px;
+}
+.page_content__inner .card .actions {
+  height: 212px;
+  padding-top: 40px;
+  flex: 0 0 230px;
+  text-align: center;
+  line-height: 1.2;
+  border-left: 1px dashed #ccc;
+}
+.page_content__inner .card .actions .before_price {
+  text-decoration: line-through;
+  color: #f00;
+}
+.page_content__inner .card .actions .price {
+  font-size: 1.9rem;
+  margin-bottom: 5px;
+}
+.page_content__inner .card .actions .variable {
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+}
+.page_content__inner .card .additional {
+  font-size: 0.7rem;
+  flex: 0;
+  flex-basis: 100%;
+  padding: 15px 35px;
+  color: $cl--third;
+}
+.page_content__inner .card .additional img {
+  display: inline-flex;
+  margin: 0 5px 0 0;
+}
+.page_content__inner .card .additional .stars {
+  float: right;
+}
+.page_content__inner .card .additional .stars img {
+  width: 20px;
+}
+.page_content__inner .card .additional .bonus {
+  margin-right: 15px;
+  position: relative;
+  top: 3px;
+}
+.page_content__inner .card .additional .bonus img {
+  width: 15px;
+}
+img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+svg {
+  overflow: visible;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+button {
+  color: $cl--white;
+}
+@media only screen and (max-width: 960px) {
+  .image {
+    flex: 1 !important;
+  }
+  .right_side {
+    flex: 3 !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card {
+    height: auto !important;
+  }
+  .card .image {
+    flex: auto !important;
+    height: 240px;
+  }
+  .card .image .image_inner {
+    background-size: auto !important;
+  }
+  .card .image .badger_image1 {
+    background-position: center -150px !important;
+  }
+  .card .image .badger_image2 {
+    background-position: center -260px !important;
+  }
+  .card .right_side {
+    flex: auto !important;
+  }
+  .card .right_side .desc {
+    flex: auto !important;
+    height: auto !important;
+  }
+  .card .right_side .actions {
+    padding-top: 0 !important;
+    padding-bottom: 30px;
+    flex: auto !important;
+    height: auto !important;
+    border: 0;
+  }
+  .card .right_side .additional .bonus {
+    display: block;
+    margin-bottom: 10px;
+  }
+}

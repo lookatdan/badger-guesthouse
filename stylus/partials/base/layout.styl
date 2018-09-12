@@ -1,0 +1,250 @@
+*
+*::before
+*::after
+    box-sizing border-box
+    word-wrap break-word
+
+body
+    display flex
+    flex-direction column
+    align-items center
+    justify-content flex-start
+    min-height 100vh
+    background-color:$cl--off;
+
+// keyboard focus styles
+// use a11y.js to detect keyboard input
+html
+    &[data-focus-source="key"] :focus
+        z-index 90
+        outline-offset 6px
+        outline 2px solid $cl--focus
+
+    :focus
+        outline 0
+
+.main_content
+    flex 1
+    display flex
+    flex-direction column
+    width 100%
+
+// styles nested in this block are for a standard
+// content page layout with a centered containing div
+.page_content
+    flex 1
+    width 100%
+    font-family "montserrat-medium-webfont"
+    &__inner
+        contain(flex)
+        flex-direction column
+        align-items flex-start
+        > *:first-child
+            margin-top $sp--plus-half
+
+        > *:last-child
+            margin-bottom $sp--plus-half
+            
+        // card styles
+        .card 
+            background-color $cl--white
+            outer-glow(0.33)
+            display flex
+            flex-wrap wrap
+            height 262px
+            flex-direction row
+            .image
+                .photos
+                    display block
+                    width 45px
+                    height 45px
+                    background-color $cl--white
+                    position absolute
+                    bottom 0
+                    left 0
+                    z-index 3
+                    transition: $trans-duration-med
+                    border-radius(0,7px,0,0)
+                    img
+                        width 22px
+                        margin 10px auto
+                        position relative
+                        right 2px
+                flex 1
+                position: relative;
+                flex-wrap wrap
+                .image_inner
+                    opacity 0
+                    background-position center center
+                    background-size cover
+                    position absolute
+                    top 0
+                    width 100%
+                    height 100%
+                    margin 0
+                    padding 0
+                    transition $trans-duration-med
+                .badger_image1
+                    opacity 1
+                    background-image url("../images/badger_image1.jpg")
+                .badger_image2
+                    background-image url("../images/badger_image2.jpg") 
+                .badger_image3
+                    background-image url("../images/badger_image3.jpg") 
+                &:hover
+                    cursor pointer
+                    .btn_arrow
+                        img
+                            opacity 1
+                    .photos
+                        opacity 0
+                .btn_arrow
+                    height 45px
+                    width 45px
+                    display block
+                    top 110px
+                    position absolute
+                    z-index 1
+                    img
+                        width 15px
+                        opacity 0
+                        margin 5px auto
+                        transition: $trans-duration-fast
+                    &__right
+                        right 0
+                .fade_out
+                    opacity 0
+                    transition: $trans-duration-fast
+                .fade_in
+                    opacity 1
+                    transition: $trans-duration-fast
+            .right_side
+                flex 2
+                display flex
+                flex-wrap wrap
+                flex-direction row
+                position relative
+                .superhost
+                    position: absolute
+                    width 100px
+                    right -7px
+                    top -7px
+            .inside 
+                align-items flex-start
+                background-color $cli--on
+                .btn__room
+                    button-gradient()
+                    button-default()
+                    width 150px
+            .desc
+                flex 3
+                padding 15px 10px 15px 35px
+                height 212px
+                .teaser
+                    font-size 0.9rem
+                .location
+                    color $cl--second
+                    img
+                        width 18px
+                        display inline-flex
+                        position relative
+                        bottom 1px
+            .actions
+                height 212px
+                padding-top 40px
+                flex 0 0 230px
+                text-align center
+                line-height 1.2
+                border-left 1px dashed #ccc
+                .before_price
+                    text-decoration line-through
+                    color red
+                .price
+                    font-size 1.9rem
+                    margin-bottom 5px
+                .variable 
+                    margin-bottom 10px
+                    font-size 0.7rem
+            .additional
+                inside-shadow()
+                font-size 0.7rem
+                flex 0
+                flex-basis 100%
+                padding 15px 35px
+                color $cl--third
+                img 
+                    display inline-flex
+                    margin 0 5px 0 0
+                .stars 
+                    float right
+                    img
+                        width 20px
+                .bonus
+                    margin-right 15px
+                    position relative
+                    top 3px
+                    img
+                        width 15px
+                    
+
+img
+    display block
+    height auto
+    width auto
+    max-width 100%
+    vertical-align bottom
+    mt()
+
+svg
+    overflow visible // fix bug in Firefox where edges of SVG display as cut
+    height 100%
+    max-height 100%
+    width 100%
+    max-width 100%
+
+input
+button
+    trans()
+
+button
+    button-reset()
+    color $cl--white
+    
+
+// media queries  
+@media only screen and (max-width: 960px)
+    .image
+        flex 1 !important
+    .right_side
+        flex 3 !important
+
+@media only screen and (max-width: 768px) 
+    .card
+        height:auto !important
+        .image
+            flex auto !important
+            height 240px
+            .image_inner
+                background-size auto !important 
+            .badger_image1
+                background-position center -150px !important 
+            .badger_image2
+                background-position center -260px !important 
+        .right_side
+            flex  auto !important
+            .desc
+                flex auto !important
+                height auto !important
+            .actions
+                padding-top 0 !important
+                padding-bottom 30px
+                flex auto !important
+                height auto !important
+                border 0
+            .additional
+                .bonus
+                    display block
+                    margin-bottom 10px
+         
+    
+

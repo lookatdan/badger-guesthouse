@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#144449">
+        <meta name="description" content="Site description goes here">
+
+        <title>Badger Guesthouse - Search Results Card</title>
+
+        <link rel="stylesheet" href="../stylus/app.css">
+
+    </head>
+
+    <body class="home">
+        <header
+        class="global_header"
+        id="global_header">
+        </header><!-- .global_header #global_header -->
+
+        <main
+        class="main_content"
+        id="main_content">
+            <article class="page_content">
+                <div class="page_content__inner">
+                    <div class="contain card">
+                        
+                        <div class="inside image">
+                            <span class="photos"><img src="../images/photos2.svg" alt="more photos" /></span>
+                            <span class="btn_arrow btn_arrow__left" onclick="previous()" id="next"><img src="../images/arrow-left.svg" /></span>
+                            <span class="btn_arrow btn_arrow__right" onclick="next()"><img src="../images/arrow-right.svg" /></span>
+                            <div class="image_inner badger_image1" id="image_1" alt="External View"></div>
+                            <div class="image_inner badger_image2" id="image_2" alt="Bedroom"></div>
+                            <div class="image_inner badger_image3" id="image_3" alt="Bed Closeup"></div>
+                        </div><!-- .image -->
+
+                        <div class="inside right_side">
+                            <img src="../images/superhost.svg" class="superhost" alt="Superhost" />
+                            <div class="inside desc">
+                                <h3>Badger Guesthouse</h3>
+                                <a href="#" class="location"><img src="../images/location.svg" /> Denver, Colorado</a>
+                                <p class="teaser">A cosy den in Caniform Park situated on the edge of Flayton Lake overlooking the stunning views of the Rocky Mountains.</p>
+                            </div><!-- .desc -->
+
+                            <div class="inside actions">
+                                <div class="before_price">£122</div>
+                                <div class="price">£106</div>
+                                <div class="variable">(per night)</div>
+                                <button class="btn btn__room">Choose Room</button>
+                            </div><!-- .actions -->
+
+                            <div class="inside additional">
+                                <span class="stars">
+                                    <img src="../images/star-filled2.svg" class="star_filled" />
+                                    <img src="../images/star-filled2.svg" class="star_filled" />
+                                    <img src="../images/star-filled2.svg" class="star_filled" />
+                                    <img src="../images/star-filled2.svg" class="star_filled" />
+                                    <img src="../images/star-line.svg" class="star_flled" />
+                                </span>
+                                <span class="bonus"><img src="../images/wifi.svg" /> Free Wifi</span>
+                                <span class="bonus"><img src="../images/pound.svg" /> Free Cancellation</span>
+                            </div><!-- .additional -->
+
+                        </div><!-- .right-side -->
+                    </div><!-- .card -->
+                </div><!-- .page_content__inner -->
+            </article><!-- .page_content -->
+        </main><!-- .main_content #main_content -->
+        <footer
+        class="global_footer"
+        id="global_footer">
+        </footer><!-- .global_footer #global_footer -->
+        <script src="../js/source/app.js" async defer></script>
+    </body><!-- .home -->
+</html>

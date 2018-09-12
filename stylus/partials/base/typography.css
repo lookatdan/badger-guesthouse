@@ -1,0 +1,161 @@
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --ratio: $ratio--sml;
+above(3)
+above(6)
+  --fz--h1: calc($fz--base * var(--ratio) * var(--ratio) * var(--ratio) *  var(--ratio));
+  --fz--h2: calc($fz--base * var(--ratio) * var(--ratio) * var(--ratio));
+  --fz--h3: calc($fz--base * var(--ratio) * var(--ratio));
+  --fz--h4: calc($fz--base * var(--ratio));
+  --fz--sub: calc($fz--base / var(--ratio));
+  --fz--supersub: calc(($fz--base / var(--ratio)) / var(--ratio));
+  --sp--h1: calc(var(--fz--h1) * $lh--heading);
+  --sp--h2: calc(var(--fz--h2) * $lh--heading);
+  --sp--h3: calc(var(--fz--h3) * $lh--heading);
+  --sp--h4: calc(var(--fz--h4) * $lh--heading);
+}
+body,
+select,
+input,
+textarea {
+  font-family: $ff--body;
+  font-weight: $fw--normal;
+  line-height: $lh--body;
+  font-size: inherit;
+  color: $cl--light;
+}
+h1,
+h2,
+h3,
+h4 {
+  display: block;
+  line-height: $lh--heading;
+  font-family: $ff--heading;
+  font-weight: normal;
+  letter-spacing: $ls;
+  color: $cl--med;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited,
+h4 a:visited {
+  color: $cl--anchor;
+}
+h1 a:active,
+h2 a:active,
+h3 a:active,
+h4 a:active,
+h1 a:visited:active,
+h2 a:visited:active,
+h3 a:visited:active,
+h4 a:visited:active,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h1 a:visited:hover,
+h2 a:visited:hover,
+h3 a:visited:hover,
+h4 a:visited:hover,
+h1 a:focus,
+h2 a:focus,
+h3 a:focus,
+h4 a:focus,
+h1 a:visited:focus,
+h2 a:visited:focus,
+h3 a:visited:focus,
+h4 a:visited:focus {
+  color: $cl--anchor--hover;
+}
+p {
+  width: auto;
+  max-width: 100%;
+  font-family: $ff--body;
+  font-size: $fz--base;
+  line-height: $lh--body;
+  letter-spacing: $ls;
+  color: $cl--med;
+}
+.reading_content p,
+p.reading_content {
+  width: $ll ch;
+}
+.reading_content p > a,
+p.reading_content > a,
+.reading_content p > a:visited,
+p.reading_content > a:visited {
+  color: $cl--anchor;
+}
+.reading_content p > a:active,
+p.reading_content > a:active,
+.reading_content p > a:visited:active,
+p.reading_content > a:visited:active,
+.reading_content p > a:hover,
+p.reading_content > a:hover,
+.reading_content p > a:visited:hover,
+p.reading_content > a:visited:hover,
+.reading_content p > a:focus,
+p.reading_content > a:focus,
+.reading_content p > a:visited:focus,
+p.reading_content > a:visited:focus {
+  color: $cl--anchor--hover;
+}
+h1 + p,
+h2 + p,
+h3 + p {
+  margin-top: $sp--third;
+}
+h4 + p {
+  margin-top: $sp--half;
+}
+* + p {
+  margin-top: $sp;
+}
+a,
+a:visited {
+  cursor: pointer;
+  text-decoration: none;
+}
+b,
+strong {
+  font-weight: normal;
+  font-family: $ff--strong;
+}
+i,
+em {
+  font-style: normal;
+  font-family: $ff--emphasis;
+}
+::selection {
+  background-color: $cl--first;
+  color: #fff;
+}
+.reading_content__list {
+  display: block;
+  width: 70ch;
+  max-width: 100%;
+  padding-left: 3ch;
+}
+ol.reading_content__list {
+  list-style-type: decimal;
+}
+ul.reading_content__list {
+  list-style-type: disc;
+}
+.reading_content__list li {
+  max-width: 100%;
+}
+.reading_content__list li + li {
+  margin-top: $sp--half;
+}
+sup {
+  vertical-align: super;
+}
