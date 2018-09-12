@@ -146,7 +146,7 @@ html
                     color $cl--second
                     img
                         width 18px
-                        display inline-flex
+                        display inline-block
                         position relative
                         bottom 1px
             .actions
@@ -173,14 +173,21 @@ html
                 padding 15px 35px
                 color $cl--third
                 img 
-                    display inline-flex
-                    margin 0 5px 0 0
+                    display inline-block
+                    margin 0 4px 0 0
                 .stars 
                     float right
+                    span
+                        margin-right 7px
+                        color black
+                        font-size 0.7rem
+                        position relative
+                        top -2px
                     img
                         width 20px
+                        margin 0 2px 0 0
                 .bonus
-                    margin-right 15px
+                    margin-right 10px
                     position relative
                     top 3px
                     img
@@ -241,6 +248,8 @@ button
                 flex auto !important
                 height auto !important
                 border 0
+                .btn__room
+                    font-size 15px
             .additional
                 .bonus
                     display block

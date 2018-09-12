@@ -25,8 +25,6 @@ function TypeRatioInterpolation () {
 }
 TypeRatioInterpolation();
 
-
-
 // image carousel
 const slides = document.getElementsByClassName("image_inner");
 //loop through slides and remove classes
@@ -39,7 +37,9 @@ function removeClasses() {
 }
 // count slide number
 let slideNumber = 1;
-function next() {
+// event for next slide button
+const next = document.getElementById('next')
+next.addEventListener('click', event => {
     slideNumber += 1;
     removeClasses();
     // sets a limit on how many slides.
@@ -50,9 +50,12 @@ function next() {
         // resets slide back to 1.
         slideNumber = 1;
     }
-}
-function previous() {
+});
+// event for previous slide button
+const previous = document.getElementById('previous')
+previous.addEventListener('click', event => {
     removeClasses();
+    // loops slides back to last slide.
     if (slideNumber == 1) {
         slideNumber = 3;
         document.getElementById("image_" + slideNumber).classList.add("fade_in");
@@ -61,4 +64,4 @@ function previous() {
         slideNumber -= 1;
         document.getElementById("image_" + slideNumber).classList.add("fade_in");
     }
-}
+});

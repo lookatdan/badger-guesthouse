@@ -159,7 +159,7 @@ html :focus {
 }
 .page_content__inner .card .desc .location img {
   width: 18px;
-  display: inline-flex;
+  display: inline-block;
   position: relative;
   bottom: 1px;
 }
@@ -191,17 +191,25 @@ html :focus {
   color: $cl--third;
 }
 .page_content__inner .card .additional img {
-  display: inline-flex;
-  margin: 0 5px 0 0;
+  display: inline-block;
+  margin: 0 4px 0 0;
 }
 .page_content__inner .card .additional .stars {
   float: right;
 }
+.page_content__inner .card .additional .stars span {
+  margin-right: 7px;
+  color: #000;
+  font-size: 0.7rem;
+  position: relative;
+  top: -2px;
+}
 .page_content__inner .card .additional .stars img {
   width: 20px;
+  margin: 0 2px 0 0;
 }
 .page_content__inner .card .additional .bonus {
-  margin-right: 15px;
+  margin-right: 10px;
   position: relative;
   top: 3px;
 }
@@ -263,6 +271,9 @@ button {
     flex: auto !important;
     height: auto !important;
     border: 0;
+  }
+  .card .right_side .actions .btn__room {
+    font-size: 15px;
   }
   .card .right_side .additional .bonus {
     display: block;
